@@ -1,0 +1,219 @@
+dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    background: #282828;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+    }
+
+    dialog h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+    }
+
+    dialog p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+    }
+
+    dialog button {
+    background-color: #4400ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    dialog button:hover {
+    background-color: #ffffff;
+    color: #4400ff;
+    transform: scale(1.05);
+    }
+    .Emma-page {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0c0b0b, #000000);
+        box-shadow: inset 0 100px 500px #0c0b0b;
+        color: white;
+        text-align: center;
+    }
+
+    .emma-title {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .emma-description {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .emma-button {
+        background-color: #ffffff;
+        color: #4400ff;
+        border: none;
+        border-radius: 25px;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .emma-button:hover {
+        background-color: #4400ff;
+        color: #ffffff;
+    }
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #0c0b0b;
+        color: white;
+        
+        text-align: center;
+    }
+    .Parrafo {
+        font-size: 12px;
+        color: #fff3f3b6;
+        margin-top: 10px;
+    }
+
+    .spotify-header {
+        background: linear-gradient(to bottom, #00333a, #0c0b0b);
+        background-size: 100% 100%;
+        padding: 50px 20px;
+        text-align: center;
+        color: white;
+        box-shadow: inset 0 -100px 100px  #0c0b0b;
+    }
+
+    .spotify-header h1 {
+        font-size: 3em;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .spotify-header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #b3b3b3;
+    }
+
+    .services-title {
+        font-size: 2.5em;
+        font-weight: 600;
+        color: #00a971;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .services-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        justify-content: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .service-item {
+        background: #282828;
+        border-radius: 18px;
+        padding: 20px 30px;
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #b3b3b3;
+        transition: all 0.3s ease;
+        width: 250px;
+        text-align: center;
+    }
+
+    .service-item:hover {
+        color: #ffffff;
+        background: #006779;
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+
+    .service-item:hover p {
+        color: #ffffff;
+    }
+    ::-webkit-scrollbar {
+       display: none;
+    }
+    .container {
+        height: 100vh;
+        width: 100%;
+    }
+    .Emma-Page2 {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row; /* Align items side by side */
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #000000, #000000);
+        box-shadow: inset 0 100px 500px #000000;
+        color: white;
+        text-align: center;
+    }
+
+
+    .Emma-page3{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+        background: linear-gradient(135deg, #000000, #000000);
+        box-shadow: inset 0 100px 500px #000000;
+        color: white;
+        text-align: center;
+    }
+    .emmaImage{
+        width: 40%;
+        height: 40%;
+    }
+
+    .two-column-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    .two-column-grid > * {
+        flex: 1 1 calc(50% - 20px);
+        min-width: 300px;
+        margin: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .two-column-grid > * {
+            flex: 1 1 100%;
+        }
+    }

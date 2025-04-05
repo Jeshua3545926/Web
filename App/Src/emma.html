@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Asistente Virtual Emma</title>
+    <style>
+        :root {
+            --primary-color: #6200ea;
+            --primary-hover: #3700b3;
+            --background-color: #121212;
+            --text-color: #ffffff;
+            --secondary-bg: #1e1e1e;
+            --accent-color: #bb86fc;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+
+        .slider-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: var(--secondary-bg);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .slider-menu a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-menu a i {
+            margin-right: 10px;
+        }
+
+        .container {
+            margin-left: 250px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--text-color);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .response-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--secondary-bg);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-bar {
+            background-color: var(--secondary-bg);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 16px;
+            text-align: center;
+            transition: color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-bar a.active {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-bar a:hover {
+            color: var(--primary-hover);
+        }
+
+        .nav-bar a span {
+            font-size: 12px;
+        }
+
+        .nav-bar a i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .header {
+            background-color: var(--secondary-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .header .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--accent-color);
+        }
+
+        .header .title {
+            flex: 1;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .slider-menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .slider-menu a:hover {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            }
+
+            .slider-menu a i {
+            margin-right: 10px;
+            font-size: 20px;
+            }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            font-size: 14px;
+        }
+        </style>
+        <script>
+            // API interaction logic
+            async function callApi() {
+                const responseBox = document.querySelector('.response-box');
+                responseBox.textContent = 'Cargando...';
+                try {
+                    const response = await fetch('https://api.example.com/data');
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status} ${response.statusText}`);
+                    }
+                    const data = await response.json();
+                    responseBox.textContent = JSON.stringify(data, null, 2);
+                } catch (error) {
+                    responseBox.textContent = `Error al obtener datos de la API: ${error.message}`;
+                }
+            }
+
+            // Menu toggle logic
+            document.addEventListener('DOMContentLoaded', () => {
+                const menuIcon = document.querySelector('.menu-icon');
+                const sliderMenu = document.querySelector('.slider-menu');
+
+                menuIcon.addEventListener('click', () => {
+                    sliderMenu.classList.toggle('open');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1 class="title-with-icon">
+            <i class="fas fa-robot"></i>Emma
+        </h1>
+        <style>
+            .title-with-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            margin-left:200px ;
+            color: rgb(255, 255, 255);
+            margin-top: 20px;
+            }
+
+            .title-with-icon i {
+            margin-right: 10px;
+            font-size: 100px;
+            background: linear-gradient(45deg, rgb(133, 131, 136), rgb(0, 0, 0));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            }
+            
+            
+        </style>
+        </h1>
+            </style>
+        </h1>
+        <div class="slider-menu">
+            <a href="#"><i class="fas fa-home"></i>Inicio</a>
+            <a href="#"><i class="fas fa-info-circle"></i>Acerca de</a>
+            <a href="#"><i class="fas fa-envelope"></i>Contacto</a>
+            <a href="#"><i class="fas fa-cogs"></i>Configuración</a>
+            <a href="#"><i class="fas fa-question-circle"></i>Ayuda</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        </div>
+
+        <div class="container">
+            <h1>Bienvenido</h1>
+            <p>Este es tu asistente virtual.</p>
+            <button onclick="callApi()">Iniciar</button>
+            <div class="response-box">Aquí aparecerán las respuestas.</div>
+        </div>
+
+            <div class="terms-conditions-dialog" id="termsDialog">
+                <h2 class="h2Title">Términos y Condiciones</h2>
+                <p>Al utilizar este asistente virtual, aceptas los términos y condiciones establecidos por nuestra empresa, Asistencias Digitales Emma S.A. de C.V. Este servicio está diseñado para mejorar tu experiencia y proporcionar soluciones rápidas y efectivas. Por favor, revisa nuestra política de privacidad para más información sobre cómo protegemos tus datos personales y garantizamos tu seguridad. Si tienes alguna pregunta, no dudes en contactarnos a través de nuestros canales oficiales.</p>
+                <button onclick="closeDialog()">Ver politica de privacidad</button>
+                <button onclick="closeDialog()">Aceptar</button>
+            </div>
+
+            <style>
+                .terms-conditions-dialog {
+                    position: fixed;
+                    top: 50%;
+                    left: 60%;
+                    transform: translate(-50%, -50%);
+                    background: var(--secondary-bg);
+                    border-radius: 10px;
+                    width: 90%;
+                    max-width: 600px;
+                    text-align: center;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                    color: var(--text-color);
+                    padding: 20px;
+                    z-index: 1000;
+                    display: none;
+                }
+                .h2Title{
+                    font-size: 40px;
+                    color: var(--accent-color);
+                    margin-bottom: 10px;
+                }
+
+                .terms-conditions-dialog h2 {
+                    color: var(--accent-color);
+                    margin-bottom: 10px;
+                }
+
+                .terms-conditions-dialog p {
+                    font-size: 20px;
+                    line-height: 1.5;
+                    margin-bottom: 100px;
+                }
+
+                .terms-conditions-dialog button {
+                    background-color: var(--primary-color);
+                    color: var(--text-color);
+                    border: none;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                .terms-conditions-dialog button:hover {
+                    background-color: var(--primary-hover);
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const termsDialog = document.getElementById('termsDialog');
+                    termsDialog.style.display = 'block';
+                });
+
+                function closeDialog() {
+                    const termsDialog = document.getElementById('termsDialog');
+                    termsDialog.style.display = 'none';
+                }
+            </script>
+    </body>
+    </html>
