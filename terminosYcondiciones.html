@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            padding: 15px 20px;
+            background: linear-gradient(90deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0) 100%);
+            border-radius: 10px;
+            font-size: 1.8em;
+            position: relative;
+        }
+
+        .tabla-contenidos {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tabla-contenidos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            font-size: 0.95em;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+            transform: scale(1.001);
+            transition: all 0.3s ease;
+        }
+
+        .section-content {
+            padding: 25px;
+            background: #fff;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        ul li {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "►";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.8em;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            table {
+                width: 100%;
+                font-size: 0.8em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(231, 76, 60, 0.1) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Términos y Condiciones Legales</h1>
+
+        <div class="tabla-contenidos">
+            <h3>Contenido del Documento</h3>
+            <ol>
+                <li>Disposiciones Generales</li>
+                <li>Marco Jurídico Aplicable</li>
+                <li>Derechos y Obligaciones</li>
+                <li>Protección de Datos</li>
+                <li>Propiedad Intelectual</li>
+                <li>Responsabilidades</li>
+                <li>Terminación del Servicio</li>
+            </ol>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Importante:</strong> Este documento está regulado por la legislación mexicana vigente y establece los derechos y obligaciones entre las partes involucradas.</p>
+        </div>
+
+        <h2>1. Disposiciones Generales</h2>
+        <div class="section-content">
+            <p>Con fundamento en los artículos 1794 y 1795 del Código Civil Federal, se establecen las siguientes disposiciones:</p>
+            <table>
+                <tr>
+                    <th>Fundamento Legal</th>
+                    <th>Aplicación</th>
+                </tr>
+                <tr>
+                    <td>Art. 1794 CCF</td>
+                    <td>Elementos esenciales del contrato</td>
+                </tr>
+                <tr>
+                    <td>Art. 1795 CCF</td>
+                    <td>Validez y existencia del acto jurídico</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>2. Marco Jurídico Aplicable</h2>
+        <div class="section-content">
+            <ul>
+                <li>Constitución Política de los Estados Unidos Mexicanos</li>
+                <li>Código Civil Federal</li>
+                <li>Ley Federal de Protección al Consumidor</li>
+                <li>Ley Federal de Protección de Datos Personales</li>
+            </ul>
+        </div>
+
+        <h2>3. Derechos y Obligaciones</h2>
+        <div class="section-content">
+            <div class="highlight-box">
+                <h4>Derechos del Usuario</h4>
+                <ul>
+                    <li>Acceso a información clara y precisa</li>
+                    <li>Protección de datos personales</li>
+                    <li>Cancelación de servicios</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Última actualización:</strong> [Fecha]</p>
+            <p><strong>Contacto legal:</strong> [Correo electrónico]</p>
+            <div class="button-container">
+                <a href="#" class="button">Descargar PDF</a>
+                <a href="#" class="button">Contactar Soporte</a>
+            </div>
+            <p><small>© 2024 Todos los derechos reservados</small></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
