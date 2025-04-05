@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
                             title: 'Inscripción Escolar',
                             quantity: 1,
                             currency_id: 'MXN',
-                            unit_price: 500
+                            unit_price: 2500
                         }]
                     })
                 });
