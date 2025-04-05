@@ -5,109 +5,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago de Inscripción</title>
     <script src="https://sdk.mercadopago.com/js/v2" onload="initMercadoPago()"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-        <style>
-            body {
-            font-family: Arial, sans-serif;
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            }
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-            .top {
-            background-color: #007bff;
+        .top {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-bottom-right-radius:50px;
+            border-bottom-left-radius:30px;
             color: white;
-            padding: 20px;
+            padding: 2.5rem 1rem;
             text-align: center;
-            }
+            box-shadow: var(--shadow);
+        }
 
-            .top h1 {
+        .top h1 {
             margin: 0;
-            font-size: 2.5em;
-            }
+            font-size: 2.8em;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
 
-            #wallet-container {
-            text-align: center;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            }
+        .main-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
 
-            #wallet-container h1 {
-            font-size: 30px;
-            margin-bottom: 20px;
-            }
+        .schools {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
 
-            .schools {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            }
+        .schools h2 {
+            font-size: 1.8em;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
 
-            .schools h2 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-align: center;
-            }
-
-            .schools form {
+        .school-option {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            }
+            gap: 1rem;
+        }
 
-            .schools label {
-            margin-bottom: 10px;
-            font-size: 1em;
+        .school-card {
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
             cursor: pointer;
+        }
+
+        .school-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .school-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .school-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .checkout-summary {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .summary-title {
+            font-size: 1.5em;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .total {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        #wallet-container {
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .main-container {
+                grid-template-columns: 1fr;
             }
 
-            input[type="checkbox"] {
-            margin-right: 10px;
+            .checkout-summary {
+                position: static;
             }
-            .Pagoo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
-
-        <section class="top">
-            <h1>Pago de Inscripciones</h1>
-        </section>
-        <section class="Pagoo">
-        <div id="wallet-container">
-            <h1>Pago Seguro</h1>
-        </div>
-    </section>
-        <section class="schools">
-            <h2>Selecciona tu escuela:</h2>
-            <form>
-            <label>
-                <input type="checkbox" name="school" value="tec-monterrey"> Tec de Monterrey
-            </label>
-            <label>
-                <input type="checkbox" name="school" value="tec-madero"> Tec de Madero
-            </label>
-            <label>
-                <input type="checkbox" name="school" value="iest"> IEST
-            </label>
-            <label>
-                <input type="checkbox" name="school" value="cetis-22"> CETIS 22
-            </label>
-            </form>
-        </section>
-
+        }
     </style>
+
+    <section class="top">
+        <h1>Pago de Inscripciones</h1>
+    </section>
+
+    <div class="main-container">
+        <section class="schools">
+            <h2>Selecciona tu escuela</h2>
+            <div class="school-option">
+                <div class="school-card">
+                    <div class="school-info">
+                        <label>
+                            <input type="radio" name="school" value="tec-monterrey">
+                            <span>Tec de Monterrey</span>
+                        </label>
+                        <span class="price">$45,000 MXN</span>
+                    </div>
+                    <div class="school-details">
+                        <p>✓ Inscripción semestral completa</p>
+                        <p>✓ Acceso a todas las instalaciones</p>
+                        <p>✓ Seguro estudiantil incluido</p>
+                    </div>
+                </div>
+
+                <div class="school-card">
+                    <div class="school-info">
+                        <label>
+                            <input type="radio" name="school" value="tec-madero">
+                            <span>Tec de Madero</span>
+                        </label>
+                        <span class="price">$35,000 MXN</span>
+                    </div>
+                    <div class="school-details">
+                        <p>✓ Inscripción semestral completa</p>
+                        <p>✓ Material didáctico incluido</p>
+                        <p>✓ Seguro estudiantil básico</p>
+                    </div>
+                </div>
+
+                <div class="school-card">
+                    <div class="school-info">
+                        <label>
+                            <input type="radio" name="school" value="iest">
+                            <span>IEST</span>
+                        </label>
+                        <span class="price">$32,000 MXN</span>
+                    </div>
+                    <div class="school-details">
+                        <p>✓ Inscripción semestral</p>
+                        <p>✓ Acceso a biblioteca digital</p>
+                        <p>✓ Credencial estudiantil</p>
+                    </div>
+                </div>
+
+                <div class="school-card">
+                    <div class="school-info">
+                        <label>
+                            <input type="radio" name="school" value="cetis-22">
+                            <span>CETIS 22</span>
+                        </label>
+                        <span class="price">$28,000 MXN</span>
+                    </div>
+                    <div class="school-details">
+                        <p>✓ Inscripción semestral básica</p>
+                        <p>✓ Material de laboratorio incluido</p>
+                        <p>✓ Seguro estudiantil básico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="checkout-summary">
+            <h3 class="summary-title">Resumen de Pago</h3>
+            <div class="summary-item">
+                <span>Inscripción base</span>
+                <span id="base-price">$0.00 MXN</span>
+            </div>
+            <div class="summary-item">
+                <span>Seguro estudiantil</span>
+                <span>Incluido</span>
+            </div>
+            <div class="summary-item">
+                <span>Materiales</span>
+                <span>Incluido</span>
+            </div>
+            <div class="total">
+                <span>Total a pagar:</span>
+                <span id="total-price">$0.00 MXN</span>
+            </div>
+            <div id="wallet-container"></div>
+        </section>
+    </div>
     
 
     <script>
@@ -136,6 +263,23 @@
             }
         });
         
+        const schoolInputs = document.querySelectorAll('input[name="school"]');
+        const array = [45000, 35000, 32000, 28000];
+        schoolInputs.forEach((input, index) => {
+
+            input.value = array[index];
+            input.addEventListener('change', () => {
+                const checked = document.querySelector('input[name="school"]:checked');
+                const totalPrice = document.getElementById('total-price');
+                const basePrice = document.getElementById('base-price');
+                if (checked) {
+                    const price = checked.value;
+                    totalPrice.textContent = `$${price} MXN`;
+                    basePrice.textContent = `$${price} MXN`;
+                }
+            });
+        });
+
     </script>
     
     
