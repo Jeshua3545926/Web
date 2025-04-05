@@ -6,34 +6,223 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Edu Application</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .header-content {
+            position: relative;
+            padding: 4rem 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #00FFFF, #5800FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        .services-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .service-card {
+            background: rgba(43, 43, 43, 0.128);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            min-height: 400px; /* Altura fija para todas las tarjetas */
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00FFFF, #5800FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon-wrapper i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #00FFFF;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1; /* Permite que el contenido ocupe el espacio disponible */
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features span {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #00FFFF;
+        }
+
+        .service-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #00FFFF20, #5800FF20);
+            border-radius: 15px;
+            color: #00FFFF;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: auto; /* Empuja el enlace hacia abajo */
+        }
+
+        .service-link:hover {
+            background: linear-gradient(135deg, #00FFFF40, #5800FF40);
+            transform: translateX(5px);
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </head>
 <body>
     <header class="spotify-header">
-        <h1>Bienvenido a Edu Application</h1>
-        <p>Explora nuestros servicios innovadores</p>
+        <div class="header-content">
+            <h1 class="main-title">Bienvenido a Edu Application</h1>
+            <p class="subtitle">Innovación Educativa al Alcance de Todos</p>
+        </div>
     </header>
 
     <div class="container">
-        <h1 class="services-title">Servicios que ofrecemos</h1>
-        <ul class="services-list">
-            <li class="service-item"><a href="#ai-solutions" style="text-decoration: none; color: inherit;">Soluciones de Inteligencia Artificial</a></li>
-            <li class="service-item"><a href="#study-app" style="text-decoration: none; color: inherit;">Aplicación de estudios</a>
-            <p class="Parrafo">Una app movil para que los alumos se sientan mas seguros</p></li>
-            <li class="service-item"><a href="#Emma" style="text-decoration: none; color: inherit;">Asistente Virtual Emma</a></li>
-            <li class="service-item"><a href="#editor-container" style="text-decoration: none; color: inherit;">Editor de codigo</a></li>
-        </ul>
-    </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="service-title">Soluciones de IA</h3>
+                <p class="service-description">Potencia tu aprendizaje con algoritmos avanzados de inteligencia artificial</p>
+                <div class="service-features">
+                    <span>Machine Learning</span>
+                    <span>Análisis Predictivo</span>
+                    <span>Personalización</span>
+                </div>
+                <a href="#ai-solutions" class="service-link">
+                    <span>Explorar</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
 
-    <div id="Emma" class="Emma-page" style="display: flex; gap: 10px;">
-        <h2 class="emma-title">Asistente Virtual Emma</h2>
-        <p class="emma-description">Emma está aquí para ayudarte con tus tareas y responder tus preguntas.</p>
-        <div>
-        <button class="emma-button">Conoce más</button>
-        <button class="emma-button">Descargar</button>
-        <a href="emma.html" target="_blank" class="emma-button">Probar en la web</a>
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="service-title">App de Estudios</h3>
+                <p class="service-description">Experiencia de aprendizaje móvil diseñada para el éxito académico</p>
+                <div class="service-features">
+                    <span>Multiplataforma</span>
+                    <span>Modo Offline</span>
+                    <span>Gamificación</span>
+                </div>
+                <a href="#study-app" class="service-link">
+                    <span>Descubrir</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="service-title">Asistente Virtual Emma</h3>
+                <p class="service-description">Tu mentora virtual disponible 24/7 para guiar tu aprendizaje</p>
+                <div class="service-features">
+                    <span>Chat en Tiempo Real</span>
+                    <span>Asistencia Personalizada</span>
+                    <span>Multilingüe</span>
+                </div>
+                <a href="#Emma" class="service-link">
+                    <span>Conocer</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Editor de Código</h3>
+                <p class="service-description">Ambiente de desarrollo profesional con herramientas de última generación</p>
+                <div class="service-features">
+                    <span>Autocompletado</span>
+                    <span>Debug en Vivo</span>
+                    <span>Control de Versiones</span>
+                </div>
+                <a href="#editor-container" class="service-link">
+                    <span>Probar</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </div>
+
+   
     
     <!-- Aqui la informacion de para que sirve Emma  {Imagenes} y {Descripcion} -->
     <div class="Emma-page2">
@@ -84,7 +273,7 @@
         <p class="editor-text">Desarrolla y edita tu código directamente en nuestra plataforma con herramientas profesionales.</p>
     </div>
         <div class="vscode-themes-container">
-            <h3 class="theme-title">Explora Visual Studio Code</h3>
+            <h3 class="theme-title">Explora IntelliStudio IDEA</h3>
             
             <div class="theme-images-slider">
                 <div class="slider-track">
@@ -128,7 +317,7 @@
                 </div>
 
                 <div class="vscode-info">
-                    <h4>¿Por qué elegir VS Code?</h4>
+                    <h4>¿Por qué elegir IntelliStudio IDEA?</h4>
                     <ul class="info-list">
                         <li>✨ Editor gratuito y de código abierto</li>
                         <li>🚀 Rendimiento excepcional y inicio rápido</li>
