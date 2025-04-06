@@ -1,16 +1,16 @@
-//##########################################//
-//                                         //
-//                                         //
-// Imortant {NO MODIFICAR La Api}!!        //
-//                                         //
-//                                         //
-//##########################################//
 
-import http from 'http';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import fetch from 'node-fetch';
+//                                          //
+//            ¡IMPORTANTE!                  //
+//   {NO MODIFICAR LA API EXISTENTE}        //
+//                                          //
+//                                          //
+//   Nota: Favor de implementar lógica      //
+//   para que los precios enviados desde    //
+//   el frontend sean recibidos y procesados//
+//   correctamente en el backend.           //
+//                                          //
+
+import { http, fs, path, fileURLToPath, fetch } from '../importaaciones/imports.js';
 import config from './Api/env.js';
 
 const __filename = fileURLToPath(import.meta.url);
