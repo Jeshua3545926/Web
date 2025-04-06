@@ -62,30 +62,30 @@ class PaymentServer {
         });
     }
 
-        // ServerAprobed(res) {
-        //     res.writeHead(200, { 'Content-Type': 'text/html' });
-        //     res.end( `<script>alert("pago no aprobado")</script>`);
-        // }
-        // serverPending(res) {
-        //     res.writeHead(200, { 'Content-Type': 'text/html' });
-        //     res.end( `<script>alert("pago pendiente")</script>`);
-        // }
-        // serverFailure(res) {
-        //     res.writeHead(200, { 'Content-Type': 'text/html' });
-        //     res.end( `<script>alert("pago fallido")</script>`);
-        // }
-        serveHtmlFile(res) {
-            const filePath = path.join(__dirname, 'pagar.html');
-            fs.readFile(filePath, (err, data) => {
-                if (err) {
-                    res.writeHead(500, { 'Content-Type': 'text/plain' });
-                    res.end('Error interno del servidor');
-                } else {
-                    res.writeHead(200, { 'Content-Type': 'text/html' });
-                    res.end(data);
-                }
-            });
-        }
+    //     ServerAprobed(res) {
+    //         res.writeHead(200, { 'Content-Type': 'text/html' });
+    //         res.end( `<script>alert("pago no aprobado")</script>`);
+    // }
+    //     serverPending(res) {
+    //         res.writeHead(200, { 'Content-Type': 'text/html' });
+    //         res.end( `<script>alert("pago pendiente")</script>`);
+    //     }
+    //     serverFailure(res) {
+    //     res.writeHead(200, { 'Content-Type': 'text/html' });
+    //     res.end( `<script>alert("pago fallido")</script>`);
+    // }
+    serveHtmlFile(res) {
+        const filePath = path.join(__dirname, 'pagar.html');
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error interno del servidor');
+            } else {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(data);
+            }
+        });
+    }
 
     createServer() {
         return http.createServer((req, res) => {
