@@ -81,9 +81,28 @@ class PaymentServer {
 
     start(port = 3000) {
         const server = this.createServer();
-        server.listen(port, () => {
-            console.log(`Servidor corriendo en http://localhost:${port}`);
-        });
+        const lines = [
+            `╔══════════════════════════════════════════════════════════════════╗`,
+            `║                                                                  ║`,
+            `║   🚀 \x1b[36mServidor corriendo en: \x1b[32mhttp://localhost:${port} \x1b[35m🚀             ║`,
+            `║                                                                  ║`,
+            `╚══════════════════════════════════════════════════════════════════╝\x1b[0m`
+        ];
+        for (const line of lines) {
+            console.log(`\x1b[35m${line}\x1b[37m`);
+        }
+                    
+        // \x1b[30m - Color negro
+        // \x1b[31m - Color rojo
+        // \x1b[32m - Color verde
+        // \x1b[33m - Color amarillo
+        // \x1b[34m - Color azul
+        // \x1b[35m - Color magenta
+        // \x1b[36m - Color cyan
+        // \x1b[37m - Color blanco
+        // \x1b[0m  - Resetear color a predeterminado
+            
+        server.listen(port);
         return server;
     }
 }
