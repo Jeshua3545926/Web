@@ -59,10 +59,7 @@ function getModuleData() {
     const grupo = [];
 
     return {
-        name,
-        especialidad,
-        grado,
-        grupo,
+        name,especialidad,grado,grupo,
         addName(newName) {
             name.push(newName);
         },

@@ -273,6 +273,9 @@
                 const checked = document.querySelector('input[name="school"]:checked');
                 const totalPrice = document.getElementById('total-price');
                 const basePrice = document.getElementById('base-price');
+                // const select = document.getElementById('select-especialidad');
+                //logica para el select
+                
                 if (checked) {
                     const price = checked.value;
                     totalPrice.textContent = `$${price} MXN`;
@@ -307,7 +310,7 @@
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ preferenceId: data.id }));
         }
-       
+        
     </script>
     
     
