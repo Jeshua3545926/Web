@@ -10,8 +10,8 @@
 //   correctamente en el backend.           //
 //                                          //
 
-import { http, fs, path, fileURLToPath, fetch } from '../importaaciones/imports.js';
-import config from './Api/env.js';
+import { http, fs, path, fileURLToPath, fetch } from '../../../../../importaaciones/imports.js';
+import config from '../../../../Api/env.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -75,7 +75,7 @@ class PaymentServer {
     //     res.end( `<script>alert("pago fallido")</script>`);
     // }
     serveHtmlFile(res) {
-        const filePath = path.join(__dirname, 'pagar.html');
+        const filePath = path.join(__dirname, '../../page/pagar.html');
         fs.readFile(filePath, (err, data) => {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -143,12 +143,7 @@ paymentServer.start(3000);
 const server = paymentServer.createServer();
 server.listen(4000);
 
-Este enfoque modular permite:
-1. Mejor organización del código
-2. Reutilización de funcionalidad
-3. Más fácil de testear
-4. Mejor encapsulamiento de la lógica
-5. Más flexible para modificaciones futuras
+
 */
 
 

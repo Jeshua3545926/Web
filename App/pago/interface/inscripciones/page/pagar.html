@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago de Inscripción</title>
-    <script src="https://sdk.mercadopago.com/js/v2" onload="initMercadoPago()"></script>
+    
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,22 +28,7 @@
             line-height: 1.6;
         }
 
-        .top {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-bottom-right-radius:50px;
-            border-bottom-left-radius:30px;
-            color: white;
-            padding: 2.5rem 1rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .top h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
+        
 
         .main-container {
             display: grid;
@@ -143,11 +129,6 @@
             }
         }
     </style>
-
-    <section class="top">
-        <h1>Pago de Inscripciones</h1>
-    </section>
-
     <div class="main-container">
         <section class="schools">
             <h2>Selecciona tu escuela</h2>
@@ -311,7 +292,7 @@
             res.end(JSON.stringify({ preferenceId: data.id }));
         }
         
-    </script>
+    </script> 
     
     
 </body>
