@@ -1,4 +1,3 @@
-
 //                                          //
 //            ¡IMPORTANTE!                  //
 //   {NO MODIFICAR LA API EXISTENTE}        //
@@ -91,7 +90,32 @@ class PaymentServer {
         return http.createServer((req, res) => {
             if (req.method === 'POST' && req.url === '/create_preference') {
                 this.handlePostRequest(req, res);
+            } else if (req.url.endsWith('.js')) {
+                // Servir archivos JavaScript
+                const filePath = path.join(__dirname, '../../', req.url);
+                fs.readFile(filePath, (err, data) => {
+                    if (err) {
+                        res.writeHead(404);
+                        res.end('Archivo no encontrado');
+                        return;
+                    }
+                    res.writeHead(200, { 'Content-Type': 'application/javascript' });
+                    res.end(data);
+                });
+            } else if (req.url.endsWith('.css')) {
+                // Servir archivos CSS
+                const filePath = path.join(__dirname, '../../', req.url);
+                fs.readFile(filePath, (err, data) => {
+                    if (err) {
+                        res.writeHead(404);
+                        res.end('Archivo no encontrado');
+                        return;
+                    }
+                    res.writeHead(200, { 'Content-Type': 'text/css' });
+                    res.end(data);
+                });
             } else {
+                // Servir el HTML por defecto
                 this.serveHtmlFile(res);
             }
         });
