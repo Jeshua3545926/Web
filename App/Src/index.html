@@ -273,7 +273,7 @@
         <p class="editor-text">Desarrolla y edita tu código directamente en nuestra plataforma con herramientas profesionales.</p>
     </div>
         <div class="vscode-themes-container">
-            <h3 class="theme-title">Explora IntelliStudio IDEA</h3>
+            <h3 class="theme-title">Explora Astro</h3>
             
             <div class="theme-images-slider">
                 <div class="slider-track">
@@ -297,27 +297,35 @@
                         <h5>IntelliSense</h5>
                         <p>Autocompletado inteligente y sugerencias de código en tiempo real</p>
                     </div>
-
                     <div class="feature-card">
                         <i class="fa-solid fa-bug"></i>
                         <h5>Depuración Avanzada</h5>
                         <p>Herramientas de depuración integradas para múltiples lenguajes</p>
                     </div>
-
+                    <div class="feature-card">
+                        <i class="fa-solid fa-robot"></i>
+                        <h5>Inteligencia Artificial</h5>
+                        <p>Herramientas de inteligencia artificial por comando de voz</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h5>Compiladores</h5>
+                        <p>Compiladores pre instalados</p>
+                    </div>
                     <div class="feature-card">
                         <i class="fa-solid fa-puzzle-piece"></i>
                         <h5>Extensiones</h5>
                         <p>Miles de extensiones disponibles para personalizar tu experiencia</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-mobile"></i>
+                        <i class="fas fa-mobile-alt"></i>
                         <h5>Emulador de celular</h5>
                         <p>Prueba y depura aplicaciones móviles con emuladores integrados</p>
                     </div>
                 </div>
 
                 <div class="vscode-info">
-                    <h4>¿Por qué elegir IntelliStudio IDEA?</h4>
+                    <h4>¿Por qué elegir Astro?</h4>
                     <ul class="info-list">
                         <li>✨ Editor gratuito y de código abierto</li>
                         <li>🚀 Rendimiento excepcional y inicio rápido</li>
@@ -330,157 +338,186 @@
             </div>
         </div>
 
-        <style>
-            .vscode-themes-container {
-                padding: 40px;
-                background: linear-gradient(to top, #171718, #121213, #0a0b0b, #001d1d);
-                border-radius: 20px;
-                margin: 0;
-                backdrop-filter: blur(10px);
-                overflow: hidden;
-            }
+<style>
+    .vscode-themes-container {
+        padding: 60px;
+        background: linear-gradient(145deg, #1a1b1e, #0d0e10);
+        border-radius: 30px;
+        margin: 20px;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        overflow: hidden;
+    }
 
-            .theme-title {
-                font-size: 2.5em;
-                color: #00FFFF;
-                text-align: center;
-                margin-bottom: 40px;
-                text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-            }
+    .theme-title {
+        font-size: 3em;
+        color: #4fd1c5;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-shadow: 0 2px 10px rgba(79,209,197,0.3);
+    }
 
-            .theme-images-slider {
-                width: 100%;
-                overflow: hidden;
-                position: relative;
-                padding: 20px 0;
-            }
+    .theme-images-slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 30px 0;
+        border-radius: 20px;
+    }
 
-            .slider-track {
-                display: flex;
-                animation: scroll 40s linear infinite;
-                width: calc(400px * 8);
-            }
+    .slider-track {
+        display: flex;
+        animation: scroll 50s linear infinite;
+        width: calc(450px * 8);
+    }
 
-            .theme-image {
-                width: 400px;
-                height: 250px;
-                object-fit: cover;
-                border-radius: 10px;
-               border: 1px solid white;
-                margin-right: 20px;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
+    .theme-image {
+        width: 450px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 2px solid rgba(79,209,197,0.2);
+        margin-right: 25px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: brightness(0.9);
+    }
 
-            .theme-image:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 20px rgb(0, 255, 255);
-            }
+    .theme-image:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(79,209,197,0.3);
+        filter: brightness(1.1);
+        border-color: rgba(79,209,197,0.6);
+    }
 
-            .features-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-                margin: 40px 0;
-            }
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin: 60px 0;
+    }
 
-            .feature-card {
-                background: rgba(0, 255, 255, 0.1);
-                padding: 25px;
-                border-radius: 15px;
-                text-align: center;
-                transition: transform 0.3s ease;
-            }
+    .feature-card {
+        background: rgba(79,209,197,0.05);
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(79,209,197,0.1);
+    }
 
-            .feature-card:hover {
-                transform: translateY(-10px);
-                background: rgba(0, 255, 255, 0.2);
-            }
+    .feature-card:hover {
+        transform: translateY(-15px);
+        background: rgba(79,209,197,0.1);
+        border-color: rgba(79,209,197,0.3);
+    }
 
-            .feature-card i {
-                font-size: 2.5em;
-                color: #00FFFF;
-                margin-bottom: 15px;
-            }
+    .feature-card i {
+        font-size: 3em;
+        color: #4fd1c5;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
 
-            .feature-card h5 {
-                color: #00FFFF;
-                font-size: 1.3em;
-                margin: 10px 0;
-            }
+    .feature-card:hover i {
+        transform: scale(1.5);
+        color: #edeeff;
+    }
 
-            .feature-card p {
-                color: #ffffff;
-                font-size: 1em;
-            }
+    .feature-card h5 {
+        color: #4fd1c5;
+        font-size: 1.5em;
+        margin: 15px 0;
+        font-weight: 600;
+    }
 
-            .vscode-info {
-                background: rgba(0, 255, 255, 0.05);
-                padding: 30px;
-                border-radius: 15px;
-                margin-top: 40px;
-            }
+    .feature-card p {
+        color: #e2e8f0;
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
 
-            .vscode-info h4 {
-                color: #00FFFF;
-                font-size: 1.8em;
-                margin-bottom: 20px;
-                text-align: center;
-            }
+    .vscode-info {
+        background: rgba(79,209,197,0.03);
+        padding: 40px;
+        border-radius: 25px;
+        margin-top: 60px;
+        border: 1px solid rgba(79,209,197,0.1);
+    }
 
-            .info-list {
-                list-style: none;
-                padding: 0;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-                perspective: 1000px;
-            }
+    .vscode-info h4 {
+        color: #4fd1c5;
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 700;
+    }
 
-            .info-list li {
-                color: #ffffff;
-                font-size: 1.2em;
-                padding: 20px;
-                background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(88, 0, 255, 0.2));
-                border-radius: 15px;
-                border: 1px solid rgba(0, 255, 255, 0.2);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                backdrop-filter: blur(5px);
-                position: relative;
-                overflow: hidden;
-            }
+    .info-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
 
-            .info-list li:hover {
-                transform: translateY(-10px) rotateX(10deg);
-                background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(88, 0, 255, 0.3));
-                box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
-                border-color: rgba(0, 255, 255, 0.4);
-                text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-            }
+    .info-list li {
+        color: #e2e8f0;
+        font-size: 1.2em;
+        padding: 25px;
+        background: linear-gradient(145deg, rgba(79,209,197,0.05), rgba(79,209,197,0.1));
+        border-radius: 20px;
+        border: 1px solid rgba(79,209,197,0.15);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+    }
 
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(calc(-400px * 4));
-                }
-            }
+    .info-list li:hover {
+        transform: translateY(-10px);
+        background: linear-gradient(145deg, rgba(79,209,197,0.1), rgba(79,209,197,0.15));
+        border-color: rgba(79,209,197,0.3);
+        box-shadow: 0 20px 40px rgba(79,209,197,0.2);
+    }
 
-            .slider-track:hover {
-                animation-play-state: paused;
-            }
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-450px * 4));
+        }
+    }
 
-            @media (max-width: 768px) {
-                .features-grid {
-                    grid-template-columns: 1fr;
-                }
+    .slider-track:hover {
+        animation-play-state: paused;
+    }
 
-                .info-list {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
+    @media (max-width: 1024px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .info-list {
+            grid-template-columns: 1fr;
+        }
+
+        .theme-title {
+            font-size: 2.5em;
+        }
+
+        .vscode-themes-container {
+            padding: 30px;
+            margin: 10px;
+        }
+    }
+</style>
     </div>
 
     <style>
