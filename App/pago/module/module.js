@@ -1,4 +1,4 @@
-/**
+/** 
  * ╔══════════════════════════════════════════════════════════════════════════╗
  * ║                              getModuleData                               ║
  * ║                                                                          ║
@@ -62,15 +62,36 @@ function getModuleData() {
         name,especialidad,grado,grupo,
         addName(newName) {
             name.push(newName);
+            /*
+            const moduleData = getModuleData();
+            const nombre = ["jeshua"]
+            moduleData.addName(nombre[0])
+            */
         },
         addEspecialidad(newEspecialidad) {
             especialidad.push(newEspecialidad);
+            /*
+            const moduleData = getModuleData();
+            const especialidad = ["matematicas"]
+            moduleData.addEspecialidad(especialidad[0])
+            */
         },
         addGrado(newGrado) {
             grado.push(newGrado);
+            /*
+            const moduleData = getModuleData();
+            const grado = ["10°"]
+            moduleData.addGrado(grado[0])
+            */
+            
         },
         addGrupo(newGrupo) {
             grupo.push(newGrupo);
+            /*
+            const moduleData = getModuleData();
+            const grupo = ["A"]
+            moduleData.addGrupo(grupo[0])
+            */
         },
     };
 }

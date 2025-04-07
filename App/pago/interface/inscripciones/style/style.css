@@ -131,3 +131,26 @@ body {
         position: static;
     }
 }
+.ticket-section {
+    display: flex;
+    align-items: center;
+}
+.ticket {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 20px; 
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#Imprimir, #Save {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+} 
+#Imprimir:hover, #Save:hover {
+    background-color: #0056b3;
+}
