@@ -60,7 +60,9 @@ class PaymentServer {
             }
         });
     }
+    //verificar si el pago fue aprobado o no y mostrar un mensaje en el frontend con un mensaje de pago aprobado o desaprobado
 
+    
     //     ServerAprobed(res) {
     //         res.writeHead(200, { 'Content-Type': 'text/html' });
     //         res.end( `<script>alert("pago no aprobado")</script>`);
@@ -153,20 +155,11 @@ export default PaymentServer;
 
 /*
 Para usar este módulo en otro archivo, puedes importarlo así:
-
-// Ejemplo de uso en app.js:
 import PaymentServer from './serverImport.js';
-
-// Crear una instancia del servidor
 const paymentServer = new PaymentServer();
-
-// Iniciar el servidor en el puerto deseado
 paymentServer.start(3000);
-
-// También puedes acceder a métodos individuales si es necesario
 const server = paymentServer.createServer();
 server.listen(4000);
-
 
 */
 
