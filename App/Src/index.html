@@ -11,11 +11,10 @@
         .header-content {
             position: relative;
             padding: 8rem 2rem;
-            text-align: center;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
                         url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3') center/cover;
-            min-height: 100vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -23,12 +22,12 @@
         }
 
         .main-title {
-            font-size: 5.5rem;
+            font-size: 3.5rem;
             background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+            margin-bottom: 3.5rem;
+            font-weight: 100;
             text-transform: uppercase;
             letter-spacing: 2px;
             animation: titlePulse 3s ease-in-out infinite;
@@ -36,12 +35,10 @@
         }
 
         .subtitle {
-            font-size: 2.2rem;
+            font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 3rem;
-            font-weight: 400;
+            text-transform:lowercase;
             letter-spacing: 1.5px;
-            line-height: 1.6;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
@@ -805,7 +802,7 @@
 
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-a"></i>
                 </div>
                 <h3 class="service-title">Editor de Código</h3>
                 <p class="service-description">Ambiente de desarrollo profesional con herramientas de última generación</p>
@@ -821,7 +818,7 @@
             </div>
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-headphones"></i>
                 </div>
                 <h3 class="service-title">Reproductor de musica</h3>
                 <p class="service-description">Tu mentora virtual disponible 24/7 para guiar tu aprendizaje</p>
@@ -837,7 +834,7 @@
             </div>
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-clipboard"></i>
                 </div>
                 <h3 class="service-title">Bloc de notas</h3>
                 <p class="service-description">Tu mentora virtual disponible 24/7 para guiar tu aprendizaje</p>
@@ -1087,9 +1084,9 @@
                             <div class="code-line"><span class="line-number">1</span><span class="code-content"><span class="keyword">const</span> <span class="variable">astro</span> = {</span></div>
                             <div class="code-line"><span class="line-number">2</span><span class="code-content">  <span class="property">name</span>: <span class="string">"Astro Editor"</span>,</span></div>
                             <div class="code-line"><span class="line-number">3</span><span class="code-content">  <span class="property">features</span>: [</span></div>
-                            <div class="code-line"><span class="line-number">4</span><span class="code-content">    <span class="string">"AI Integration"</span>,</span></div>
-                            <div class="code-line"><span class="line-number">5</span><span class="code-content">    <span class="string">"Real-time Collaboration"</span>,</span></div>
-                            <div class="code-line"><span class="line-number">6</span><span class="code-content">    <span class="string">"Smart Code Completion"</span></span></div>
+                            <div class="code-line"><span class="line-number">4</span><span class="code-content">    <span class="string">"Integracion de IA"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">5</span><span class="code-content">    <span class="string">"Ventana para Diagramas de flujo"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">6</span><span class="code-content">    <span class="string">"Completacion de codigo"</span></span></div>
                             <div class="code-line"><span class="line-number">7</span><span class="code-content">  ]</span></div>
                             <div class="code-line"><span class="line-number">8</span><span class="code-content">};</span></div>
                         </div>
@@ -1098,7 +1095,7 @@
                             <div class="code-line"><span class="line-number">2</span><span class="code-content">    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):</span></div>
                             <div class="code-line"><span class="line-number">3</span><span class="code-content">        <span class="variable">self</span>.<span class="property">name</span> = <span class="string">"Astro Editor"</span></span></div>
                             <div class="code-line"><span class="line-number">4</span><span class="code-content">        <span class="variable">self</span>.<span class="property">features</span> = [</span></div>
-                            <div class="code-line"><span class="line-number">5</span><span class="code-content">            <span class="string">"AI Integration"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">5</span><span class="code-content">            <span class="string">"Integracion de ia"</span>,</span></div>
                             <div class="code-line"><span class="line-number">6</span><span class="code-content">            <span class="string">"Real-time Collaboration"</span>,</span></div>
                             <div class="code-line"><span class="line-number">7</span><span class="code-content">            <span class="string">"Smart Code Completion"</span></span></div>
                             <div class="code-line"><span class="line-number">8</span><span class="code-content">        ]</span></div>
