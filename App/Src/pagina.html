@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conociendo Mi Escuela - Contacto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+            /* Fondo diagonal con dos colores inspirados en la imagen */
+            background: linear-gradient(135deg, #a3d7c1 50%, #e76c7c 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+            color: white;
+            position: relative;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .team-member h2 {
+            color: #e76c7c;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info a {
+            color: #1a2a6c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+            word-break: break-all;
+        }
+        .contact-info a:hover {
+            color: #e76c7c;
+            text-decoration: underline;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info i {
+            color: #e76c7c;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .team-section {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Conociendo Mi Escuela</h1>
+        </header>
+
+        <div class="team-section">
+            <div class="team-member">
+                <h2>Jhony</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:jonhyabelsantanamartinezz@gmail.com">jonhyabelsantanamartinezz@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+528335369936">+52-833-536-9936</a></p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <h2>Jeshua</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:garzaromerojeshuaabiram2019ktv@gmail.com">garzaromerojeshuaabiram2019ktv@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+528333444675">+52 833 344 4675</a></p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <h2>Oswaldo</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:oswaldoramongarcialinda@gmail.com">oswaldoramongarcialinda@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+528333877488">+52-833-387-7488</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
