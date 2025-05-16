@@ -4,131 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Edu Application</title>
+    <title>Edu Application - La Revolución del Aprendizaje</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         .header-content {
             position: relative;
-            padding: 4rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
             overflow: hidden;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3') center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .main-title {
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #00FFFF, #5800FF);
+            font-size: 5.5rem;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            animation: titleFloat 3s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: titlePulse 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255,107,107,0.3);
         }
 
         .subtitle {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-        ::-webkit-scrollbar{
-            display: none;
-        }
-        .services-grid {
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-x: auto;
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .service-card {
-            background: rgba(43, 43, 43, 0.128);
-            border-radius: 20px;
-            padding: 2rem;
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #4ECDC4;
+            box-shadow: 0 10px 20px rgba(78,205,196,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4ECDC4;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: rgba(255,255,255,0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            border-radius: 4px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
             display: flex;
             flex-direction: column;
-            min-height: 400px; /* Altura fija para todas las tarjetas */
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            opacity: 0;
+            transition: all 0.4s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-15px);
+            border-color: rgba(78,205,196,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
         }
 
         .service-icon-wrapper {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
             border-radius: 50%;
-            background: linear-gradient(135deg, #00FFFF, #5800FF);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(78,205,196,0.3);
         }
 
         .service-icon-wrapper i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: white;
         }
 
         .service-title {
-            font-size: 1.5rem;
-            color: #00FFFF;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            color: #4ECDC4;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-title {
+            transform: scale(1.1);
+            color: #FF6B6B;
         }
 
         .service-description {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
             line-height: 1.6;
-            flex-grow: 1; /* Permite que el contenido ocupe el espacio disponible */
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         .service-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
 
         .service-features span {
-            background: rgba(0, 255, 255, 0.1);
+            background: rgba(78,205,196,0.1);
+            color: #4ECDC4;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            color: #00FFFF;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-features span {
+            background: rgba(255,107,107,0.1);
+            color: #FF6B6B;
         }
 
         .service-link {
+            margin-top: auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, #00FFFF20, #5800FF20);
-            border-radius: 15px;
-            color: #00FFFF;
+            justify-content: center;
+            gap: 10px;
+            color: #4ECDC4;
             text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
-            margin-top: auto; /* Empuja el enlace hacia abajo */
         }
 
-        .service-link:hover {
-            background: linear-gradient(135deg, #00FFFF40, #5800FF40);
+        .service-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-link {
+            color: #FF6B6B;
+        }
+
+        .service-card:hover .service-link i {
             transform: translateX(5px);
-        }
-
-        @keyframes titleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         @media (max-width: 768px) {
@@ -139,6 +271,454 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Estilos base para todas las secciones */
+        .app-section {
+            background: rgba(17, 17, 17, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            margin: 2rem;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .app-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: -1;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .app-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .app-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .app-icon i {
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .app-title {
+            font-size: 2.8rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .app-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .app-showcase {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .app-preview {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: rgba(27, 27, 27, 0.132);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-item h3 {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Estilos específicos para App de Estudios */
+        .study-app {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(15, 23, 42, 0.95));
+        }
+
+        .study-app .app-icon {
+            background: linear-gradient(135deg, rgba(56, 191, 248, 0.201), rgba(14, 165, 233, 0.1));
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .study-app .app-icon i {
+            color: rgba(56, 189, 248, 0.9);
+        }
+
+        .study-app .feature-item {
+            background: rgba(61, 61, 61, 0.144);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        .study-app .feature-item:hover {
+            border: 1px solid rgba(56, 189, 248, 0.1);;
+        }
+
+        .study-app .feature-item i {
+            color: rgba(56, 189, 248, 0.9);
+        }
+
+        .study-app .cta-button {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(14, 165, 233, 0.1));
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: rgba(56, 189, 248, 0.9);
+        }
+
+        .study-app .cta-button:hover {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.15));
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        /* Estilos específicos para Bloc de Notas */
+        .notes-app {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+        }
+
+        .notes-app .app-icon {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+        }
+
+        .notes-app .app-icon i {
+            color: rgba(139, 92, 246, 0.9);
+            font-size: 2.8rem;
+        }
+
+        .notes-app .app-icon:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(124, 58, 237, 0.15));
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        .notes-app .feature-item {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .notes-app .feature-item:hover {
+            background: rgba(30, 41, 59, 0.7);
+            border-color: rgba(139, 92, 246, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.1);
+        }
+
+        .notes-app .feature-item i {
+            color: rgba(139, 92, 246, 0.9);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .notes-app .feature-item h3 {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .notes-app .feature-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .notes-app .cta-button {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            color: rgba(139, 92, 246, 0.9);
+            font-weight: 600;
+            padding: 1.2rem 2.8rem;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .notes-app .cta-button:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(124, 58, 237, 0.15));
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        .notes-app .cta-button i {
+            font-size: 1.3rem;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .notes-app .cta-button:hover i {
+            transform: translateX(5px);
+        }
+
+        .notes-app .app-title {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(124, 58, 237, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .notes-app .app-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Estilos para el reproductor de música */
+        .player-interface {
+            background: linear-gradient(135deg, rgb(0, 0, 0), rgba(242, 0, 255, 0.064));
+            border-radius: 25px;
+            padding: 2.5rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 0, 0, 0.685);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.651);
+        }
+
+        .now-playing {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .album-art {
+            width: 120px;
+            height: 120px;
+            background:linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 23, 27));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            
+        }
+
+        .album-art:hover {
+            animation: spin 4s linear infinite;
+            transform-origin: center;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .album-art i {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .track-info h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .track-info p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .control-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .play-btn {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .play-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .app-cta {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover i {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .app-section {
+                margin: 1rem;
+                padding: 2rem;
+            }
+
+            .app-title {
+                font-size: 2rem;
+            }
+
+            .app-features {
+                grid-template-columns: 1fr;
+            }
+
+            .now-playing {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .track-info {
+                text-align: center;
+            }
+        }
+
+        .study-app::before {
+            background-image: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3');
+        }
+
+        .notes-app::before {
+            background-image: url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3');
+        }
+
+        .music-player::before {
+            background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3');
+        }
     </style>
 
 </head>
@@ -146,7 +726,27 @@
     <header class="spotify-header">
         <div class="header-content">
             <h1 class="main-title">Bienvenido a Edu Application</h1>
-            <p class="subtitle">Innovación Educativa al Alcance de Todos</p>
+            <p class="subtitle">Transforma tu aprendizaje con la plataforma educativa más innovadora del momento. Combina IA, tecnología y educación para un futuro brillante.</p>
+            
+            <div class="cta-buttons">
+                <button class="cta-button cta-primary">Comenzar Ahora</button>
+                <button class="cta-button cta-secondary">Ver Demo</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Estudiantes Activos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Satisfacción</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Soporte IA</div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -219,6 +819,38 @@
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="service-title">Reproductor de musica</h3>
+                <p class="service-description">Tu mentora virtual disponible 24/7 para guiar tu aprendizaje</p>
+                <div class="service-features">
+                    <span>Chat en Tiempo Real</span>
+                    <span>Asistencia Personalizada</span>
+                    <span>Multilingüe</span>
+                </div>
+                <a href="#Emma" class="service-link">
+                    <span>Conocer</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="service-title">Bloc de notas</h3>
+                <p class="service-description">Tu mentora virtual disponible 24/7 para guiar tu aprendizaje</p>
+                <div class="service-features">
+                    <span>Chat en Tiempo Real</span>
+                    <span>Asistencia Personalizada</span>
+                    <span>Multilingüe</span>
+                </div>
+                <a href="#Emma" class="service-link">
+                    <span>Conocer</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -226,508 +858,744 @@
     
     <!-- Aqui la informacion de para que sirve Emma  {Imagenes} y {Descripcion} -->
     <div class="Emma-page2">
-        <div style="background: linear-gradient(135deg, #0d1117, #161b22); padding: 60px; border-radius: 15px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); margin: 40px;">
-            <h2 style="color: #58a6ff; text-align: center; margin-bottom: 40px; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px;">Inteligencia Artificial en Acción</h2>
+        <div class="emma-container">
+            <h2 class="emma-title">Emma: Tu Asistente Educativa Inteligente</h2>
+            <p class="emma-subtitle">Descubre el poder de la IA personalizada en tu aprendizaje</p>
             
-            <div class="two-column-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; justify-items: center;">
-                <div style="transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <img src="https://www.zdnet.com/a/img/resize/ba1b1ab92085d777ab5e313b34c66a94b7aa1236/2023/03/13/4de4a897-dddd-45cd-a33f-3aa52e77cc38/artificial-intelligence.jpg?auto=webp&fit=crop&height=900&width=1200" alt="AI Image 1" style="width: 100%; height: 250px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <div class="emma-stats">
+                <div class="emma-stat">
+                    <i class="fas fa-brain"></i>
+                    <h3>99.9%</h3>
+                    <p>Precisión en Respuestas</p>
                 </div>
-                
-                <div style="transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <img src="https://imageio.forbes.com/specials-images/imageserve/63bdffc05989c30c33964a41/Artificial-Intelligence/960x0.jpg?format=jpg&width=960" alt="AI Image 2" style="width: 100%; height: 250px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <div class="emma-stat">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7</h3>
+                    <p>Disponibilidad</p>
                 </div>
-                
-                <div style="transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Types_of_Artificial_Intelligence.jpg" alt="AI Image 3" style="width: 100%; height: 250px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                </div>
-                
-                <div style="transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2023/04/what-is-artificial-intelligence.jpg" alt="AI Image 4" style="width: 100%; height: 250px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                </div>
-                
-                <div style="transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/gtc/generative-ai/generative-ai-lp-hero-1920x1080.jpg" alt="AI Image 5" style="width: 100%; height: 250px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                </div>
-                
-                <div style="transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <img src="https://media.licdn.com/dms/image/D5612AQE9-0Y7oVkVQQ/article-cover_image-shrink_720_1280/0/1674617947228?e=2147483647&v=beta&t=1UvJDvKm8YJm6MSs3yK6wDj9V6Ch3MHNRGBqFLEfAOU" alt="AI Image 6" style="width: 100%; height: 250px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <div class="emma-stat">
+                    <i class="fas fa-language"></i>
+                    <h3>50+</h3>
+                    <p>Idiomas</p>
                 </div>
             </div>
-            
-            <p style="color: #8b949e; text-align: center; margin-top: 30px; font-size: 1.1em; line-height: 1.6;">
-                Explora el fascinante mundo de la Inteligencia Artificial a través de estas imágenes que representan 
-                la innovación y el futuro de la tecnología.
-            </p>
+
+            <div class="emma-features">
+                <div class="emma-feature">
+                    <i class="fas fa-comments"></i>
+                    <h4>Chat en Tiempo Real</h4>
+                    <p>Conversaciones naturales y fluidas para resolver tus dudas al instante</p>
+                </div>
+                <div class="emma-feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Aprendizaje Personalizado</h4>
+                    <p>Adapta el contenido a tu ritmo y estilo de aprendizaje</p>
+                </div>
+                <div class="emma-feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Seguimiento de Progreso</h4>
+                    <p>Monitorea tu avance y recibe recomendaciones personalizadas</p>
+                </div>
+            </div>
+
+            <div class="emma-cta">
+                <button class="emma-button primary">Probar Emma Ahora</button>
+                <button class="emma-button secondary">Ver Demo</button>
+            </div>
         </div>
+
+        <style>
+            .emma-container {
+                background: linear-gradient(135deg, #1a1b1e, #0d0e10);
+                padding: 80px 40px;
+                border-radius: 30px;
+                margin: 40px;
+                box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            }
+
+            .emma-title {
+                font-size: 3.5em;
+                background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-align: center;
+                margin-bottom: 20px;
+                font-weight: 800;
+            }
+
+            .emma-subtitle {
+                color: #e2e8f0;
+                font-size: 1.5em;
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .emma-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                margin-bottom: 60px;
+            }
+
+            .emma-stat {
+                text-align: center;
+                padding: 30px;
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .emma-stat:hover {
+                transform: translateY(-10px);
+                background: rgba(255,255,255,0.1);
+            }
+
+            .emma-stat i {
+                font-size: 2.5em;
+                color: #4ECDC4;
+                margin-bottom: 20px;
+            }
+
+            .emma-stat h3 {
+                font-size: 2.5em;
+                color: #FF6B6B;
+                margin-bottom: 10px;
+            }
+
+            .emma-stat p {
+                color: #e2e8f0;
+                font-size: 1.1em;
+            }
+
+            .emma-features {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            .emma-feature {
+                text-align: center;
+                padding: 40px;
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .emma-feature:hover {
+                transform: translateY(-10px);
+                background: rgba(255,255,255,0.1);
+            }
+
+            .emma-feature i {
+                font-size: 2.5em;
+                color: #4ECDC4;
+                margin-bottom: 20px;
+            }
+
+            .emma-feature h4 {
+                color: #FF6B6B;
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .emma-feature p {
+                color: #e2e8f0;
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+
+            .emma-cta {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .emma-button {
+                padding: 15px 40px;
+                font-size: 1.2em;
+                border-radius: 50px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 600;
+            }
+
+            .emma-button.primary {
+                background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+                color: white;
+                box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+            }
+
+            .emma-button.secondary {
+                background: transparent;
+                color: #4ECDC4;
+                border: 2px solid #4ECDC4;
+            }
+
+            .emma-button:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            }
+
+            @media (max-width: 768px) {
+                .emma-stats, .emma-features {
+                    grid-template-columns: 1fr;
+                }
+
+                .emma-title {
+                    font-size: 2.5em;
+                }
+
+                .emma-subtitle {
+                    font-size: 1.2em;
+                }
+
+                .emma-cta {
+                    flex-direction: column;
+                }
+            }
+        </style>
     </div>
 
     <div id="editor-container">
-    <div class="code-editor-section">
-        <div class="editor-grid">
-            <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" alt="VS Code" class="editor-image">
-            <img src="https://github.githubassets.com/images/modules/site/social-cards/github-social.png" alt="GitHub" class="editor-image">
-            <img src="https://cdn.pixabay.com/photo/2019/10/03/12/12/programmer-4523101_1280.jpg" alt="Coding" class="editor-image">
-        </div>
-        <h2 class="editor-title"><i class="fa fa-code" aria-hidden="true"></i> Editor de Código Abierto</h2>
-        <p class="editor-text">Desarrolla y edita tu código directamente en nuestra plataforma con herramientas profesionales.</p>
-    </div>
-        <div class="vscode-themes-container">
-            <h3 class="theme-title">Explora Astro</h3>
-            
-            <div class="theme-images-slider">
-                <div class="slider-track">
-                    <img src="https://code.visualstudio.com/assets/home/home-screenshot-win.png" alt="VS Code Interface" class="theme-image">
-                    <img src="https://code.visualstudio.com/assets/docs/languages/javascript/overview.png" alt="VS Code JavaScript" class="theme-image">
-                    <img src="https://code.visualstudio.com/assets/docs/editor/intellisense/intellisense.gif" alt="VS Code IntelliSense" class="theme-image">
-                    <img src="https://code.visualstudio.com/assets/docs/editor/debugging/debug-view.png" alt="VS Code Debug" class="theme-image">
-                    <!-- Duplicamos imágenes para el efecto infinito -->
-                    <img src="https://code.visualstudio.com/assets/home/home-screenshot-win.png" alt="VS Code Interface" class="theme-image">
-                    <img src="https://code.visualstudio.com/assets/docs/languages/javascript/overview.png" alt="VS Code JavaScript" class="theme-image">
-                    <img src="https://code.visualstudio.com/assets/docs/editor/intellisense/intellisense.gif" alt="VS Code IntelliSense" class="theme-image">
-                    <img src="https://code.visualstudio.com/assets/docs/editor/debugging/debug-view.png" alt="VS Code Debug" class="theme-image">
+        <div class="astro-editor-section">
+            <div class="astro-header">
+                <div class="astro-logo">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="astro-title">Astro Editor</h2>
+                <p class="astro-subtitle">El editor que revoluciona la forma de programar</p>
+            </div>
+
+            <div class="astro-showcase">
+                <div class="astro-preview">
+                    <div class="astro-toolbar">
+                        <div class="astro-controls">
+                            <span class="astro-button"></span>
+                            <span class="astro-button"></span>
+                            <span class="astro-button"></span>
+                        </div>
+                        <div class="astro-tabs">
+                            <span class="astro-tab active" data-lang="javascript">main.js</span>
+                            <span class="astro-tab" data-lang="python">app.py</span>
+                            <span class="astro-tab" data-lang="html">index.html</span>
+                        </div>
+                    </div>
+                    <div class="astro-code">
+                        <div class="code-block javascript active">
+                            <div class="code-line"><span class="line-number">1</span><span class="code-content"><span class="keyword">const</span> <span class="variable">astro</span> = {</span></div>
+                            <div class="code-line"><span class="line-number">2</span><span class="code-content">  <span class="property">name</span>: <span class="string">"Astro Editor"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span class="code-content">  <span class="property">features</span>: [</span></div>
+                            <div class="code-line"><span class="line-number">4</span><span class="code-content">    <span class="string">"AI Integration"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">5</span><span class="code-content">    <span class="string">"Real-time Collaboration"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">6</span><span class="code-content">    <span class="string">"Smart Code Completion"</span></span></div>
+                            <div class="code-line"><span class="line-number">7</span><span class="code-content">  ]</span></div>
+                            <div class="code-line"><span class="line-number">8</span><span class="code-content">};</span></div>
+                        </div>
+                        <div class="code-block python">
+                            <div class="code-line"><span class="line-number">1</span><span class="code-content"><span class="keyword">class</span> <span class="class">AstroEditor</span>:</span></div>
+                            <div class="code-line"><span class="line-number">2</span><span class="code-content">    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span class="code-content">        <span class="variable">self</span>.<span class="property">name</span> = <span class="string">"Astro Editor"</span></span></div>
+                            <div class="code-line"><span class="line-number">4</span><span class="code-content">        <span class="variable">self</span>.<span class="property">features</span> = [</span></div>
+                            <div class="code-line"><span class="line-number">5</span><span class="code-content">            <span class="string">"AI Integration"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">6</span><span class="code-content">            <span class="string">"Real-time Collaboration"</span>,</span></div>
+                            <div class="code-line"><span class="line-number">7</span><span class="code-content">            <span class="string">"Smart Code Completion"</span></span></div>
+                            <div class="code-line"><span class="line-number">8</span><span class="code-content">        ]</span></div>
+                        </div>
+                        <div class="code-block html">
+                            <div class="code-line"><span class="line-number">1</span><span class="code-content"><span class="tag">&lt;!DOCTYPE</span> <span class="attribute">html</span><span class="tag">&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">2</span><span class="code-content"><span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="string">"en"</span><span class="tag">&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">3</span><span class="code-content"><span class="tag">&lt;head&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">4</span><span class="code-content">    <span class="tag">&lt;title&gt;</span>Astro Editor<span class="tag">&lt;/title&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">5</span><span class="code-content"><span class="tag">&lt;/head&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">6</span><span class="code-content"><span class="tag">&lt;body&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">7</span><span class="code-content">    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"editor"</span><span class="tag">&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">8</span><span class="code-content">        <span class="comment">&lt;!-- Astro Editor Content --&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">9</span><span class="code-content">    <span class="tag">&lt;/div&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">10</span><span class="code-content"><span class="tag">&lt;/body&gt;</span></span></div>
+                            <div class="code-line"><span class="line-number">11</span><span class="code-content"><span class="tag">&lt;/html&gt;</span></span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="vscode-features">
-                <h4 class="features-title">Características Destacadas</h4>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-code"></i>
-                        <h5>IntelliSense</h5>
-                        <p>Autocompletado inteligente y sugerencias de código en tiempo real</p>
+            <div class="astro-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-bug"></i>
-                        <h5>Depuración Avanzada</h5>
-                        <p>Herramientas de depuración integradas para múltiples lenguajes</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-robot"></i>
-                        <h5>Inteligencia Artificial</h5>
-                        <p>Herramientas de inteligencia artificial por comando de voz</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-microchip"></i>
-                        <h5>Compiladores</h5>
-                        <p>Compiladores pre instalados</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-puzzle-piece"></i>
-                        <h5>Extensiones</h5>
-                        <p>Miles de extensiones disponibles para personalizar tu experiencia</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h5>Emulador de celular</h5>
-                        <p>Prueba y depura aplicaciones móviles con emuladores integrados</p>
-                    </div>
+                    <h3>IA Integrada</h3>
+                    <p>Asistencia inteligente que aprende de tu estilo de código</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Colaboración en Tiempo Real</h3>
+                    <p>Programa junto a tu equipo sin importar la distancia</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Autocompletado Mágico</h3>
+                    <p>Sugerencias inteligentes que aceleran tu desarrollo</p>
+                </div>
+            </div>
 
-                <div class="vscode-info">
-                    <h4>¿Por qué elegir Astro?</h4>
-                    <ul class="info-list">
-                        <li>✨ Editor gratuito y de código abierto</li>
-                        <li>🚀 Rendimiento excepcional y inicio rápido</li>
-                        <li>🎨 Temas personalizables y diseño adaptable</li>
-                        <li>🔧 Control de versiones Git integrado</li>
-                        <li>🌐 Soporte para múltiples lenguajes de programación</li>
-                        <li>📱 Disponible para Windows, Mac y Linux</li>
-                    </ul>
-                </div>
+            <div class="astro-cta">
+                <button class="cta-button primary">
+                    <span>Explorar Astro</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="cta-button secondary">
+                    <span>Ver Demo</span>
+                    <i class="fas fa-play"></i>
+                </button>
             </div>
         </div>
 
-<style>
-    .vscode-themes-container {
-        padding: 60px;
-        background: linear-gradient(145deg, #1a1b1e, #0d0e10);
-        border-radius: 30px;
-        margin: 20px;
-        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        overflow: hidden;
-    }
-
-    .theme-title {
-        font-size: 3em;
-        color: #4fd1c5;
-        text-align: center;
-        margin-bottom: 50px;
-        font-weight: 700;
-        letter-spacing: -1px;
-        text-shadow: 0 2px 10px rgba(79,209,197,0.3);
-    }
-
-    .theme-images-slider {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        padding: 30px 0;
-        border-radius: 20px;
-    }
-
-    .slider-track {
-        display: flex;
-        animation: scroll 50s linear infinite;
-        width: calc(450px * 8);
-    }
-
-    .theme-image {
-        width: 450px;
-        height: 280px;
-        object-fit: cover;
-        border-radius: 15px;
-        border: 2px solid rgba(79,209,197,0.2);
-        margin-right: 25px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        filter: brightness(0.9);
-    }
-
-    .theme-image:hover {
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(79,209,197,0.3);
-        filter: brightness(1.1);
-        border-color: rgba(79,209,197,0.6);
-    }
-
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin: 60px 0;
-    }
-
-    .feature-card {
-        background: rgba(79,209,197,0.05);
-        padding: 35px;
-        border-radius: 20px;
-        text-align: center;
-        transition: all 0.4s ease;
-        border: 1px solid rgba(79,209,197,0.1);
-    }
-
-    .feature-card:hover {
-        transform: translateY(-15px);
-        background: rgba(79,209,197,0.1);
-        border-color: rgba(79,209,197,0.3);
-    }
-
-    .feature-card i {
-        font-size: 3em;
-        color: #4fd1c5;
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover i {
-        transform: scale(1.5);
-        color: #edeeff;
-    }
-
-    .feature-card h5 {
-        color: #4fd1c5;
-        font-size: 1.5em;
-        margin: 15px 0;
-        font-weight: 600;
-    }
-
-    .feature-card p {
-        color: #e2e8f0;
-        font-size: 1.1em;
-        line-height: 1.6;
-    }
-
-    .vscode-info {
-        background: rgba(79,209,197,0.03);
-        padding: 40px;
-        border-radius: 25px;
-        margin-top: 60px;
-        border: 1px solid rgba(79,209,197,0.1);
-    }
-
-    .vscode-info h4 {
-        color: #4fd1c5;
-        font-size: 2.2em;
-        margin-bottom: 30px;
-        text-align: center;
-        font-weight: 700;
-    }
-
-    .info-list {
-        list-style: none;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .info-list li {
-        color: #e2e8f0;
-        font-size: 1.2em;
-        padding: 25px;
-        background: linear-gradient(145deg, rgba(79,209,197,0.05), rgba(79,209,197,0.1));
-        border-radius: 20px;
-        border: 1px solid rgba(79,209,197,0.15);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transition: all 0.4s ease;
-        backdrop-filter: blur(10px);
-    }
-
-    .info-list li:hover {
-        transform: translateY(-10px);
-        background: linear-gradient(145deg, rgba(79,209,197,0.1), rgba(79,209,197,0.15));
-        border-color: rgba(79,209,197,0.3);
-        box-shadow: 0 20px 40px rgba(79,209,197,0.2);
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-450px * 4));
-        }
-    }
-
-    .slider-track:hover {
-        animation-play-state: paused;
-    }
-
-    @media (max-width: 1024px) {
-        .features-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .features-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .info-list {
-            grid-template-columns: 1fr;
-        }
-
-        .theme-title {
-            font-size: 2.5em;
-        }
-
-        .vscode-themes-container {
-            padding: 30px;
-            margin: 10px;
-        }
-    }
-</style>
-    </div>
-
-    <style>
-        .code-editor-section {
-            background: linear-gradient( rgba(0, 0, 0, 0.642), rgb(0, 0, 0)),
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3');
-            background-size: 150% 150%;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 80px 40px;
-            border-radius: 0;
-            margin-top: -1px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            animation: backgroundMove 25s ease infinite;
-        }
-
-        @keyframes backgroundMove {
-            0% { background-position: 0% 0%; }
-            25% { background-position: 100% 0%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        .code-editor-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(3, 0, 9, 0.2), 
-                rgba(0, 0, 0, 0.062));
-            z-index: 1;
-            animation: glowPulse 3s ease-in-out infinite;
-            transform: translateZ(0);
-        }
-
-        @keyframes glowPulse {
-            0% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-            100% { opacity: 0.5; transform: scale(1); }
-        }
-
-        .editor-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            perspective: 1000px;
-            animation: gridFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes gridFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
-
-        .editor-image {
-            width: 100%;
-            height: 150px;
-            border-radius: 20px;
-            object-fit: cover;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3),
-                        0 0 20px rgba(88,0,255,0.3);
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            animation: imageFloat 4s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.5s);
-            cursor: pointer;
-        }
-
-        .editor-image:nth-child(1) { --i: 1; }
-        .editor-image:nth-child(2) { --i: 2; }
-        .editor-image:nth-child(3) { --i: 3; }
-
-        .editor-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                        rgba(88,0,255,0.4), 
-                        rgba(0,255,255,0.4));
-            opacity: 0;
-            transition: all 0.4s ease;
-            z-index: 1;
-        }
-
-        .editor-image::after {
-            content: '¡Explora el Futuro!';
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            color: white;
-            padding: 25px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 2;
-        }
-
-        .editor-image:hover {
-            transform: translateY(-15px) rotateX(10deg) rotateY(10deg) scale(1.05);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5),
-                        0 0 40px rgba(88,0,255,0.6);
-        }
-
-        .editor-image:hover::before {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .editor-image:hover::after {
-            bottom: 0;
-            animation: shimmer 2s infinite;
-        }
-
-        .editor-image:active {
-            transform: scale(0.98) translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -100% 0; }
-            100% { background-position: 100% 0; }
-        }
-
-        .editor-title {
-            font-size: 2em;
-            font-weight: 900;
-            background: linear-gradient(45deg, #5800FF, #00FFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            margin: 40px 0;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 0 30px rgba(88,0,255,0.5);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .editor-title:hover {
-            transform: scale(1.1) rotate(2deg);
-            filter: brightness(1.2) contrast(1.1);
-            text-shadow: 0 0 50px rgba(88,0,255,0.8);
-        }
-
-        .editor-text {
-            color: white;
-            font-size: 1.8em;
-            text-align: center;
-            max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .editor-text:hover {
-            transform: scale(1.02);
-            color: #00FFFF;
-            text-shadow: 0 0 20px rgba(0,255,255,0.5);
-        }
-
-        @keyframes textGlow {
-            0%, 100% { text-shadow: 0 0 20px rgba(88,0,255,0.5); }
-            50% { text-shadow: 0 0 40px rgba(0,255,255,0.8); }
-        }
-
-        @media (max-width: 768px) {
-            .editor-grid {
-                grid-template-columns: 1fr;
+        <style>
+            .astro-editor-section {
+                background: linear-gradient(135deg, #0f172a, #1e293b);
+                padding: 80px 40px;
+                border-radius: 30px;
+                margin: 40px;
+                position: relative;
+                overflow: hidden;
             }
-            
-            .editor-title {
+
+            .astro-editor-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1), transparent 70%);
+                pointer-events: none;
+            }
+
+            .astro-header {
+                text-align: center;
+                margin-bottom: 60px;
+                position: relative;
+            }
+
+            .astro-logo {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                transform: rotate(-10deg);
+                box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            }
+
+            .astro-logo i {
                 font-size: 2.5em;
+                color: white;
+            }
+
+            .astro-title {
+                font-size: 4em;
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 20px;
+                font-weight: 800;
+                letter-spacing: -2px;
+            }
+
+            .astro-subtitle {
+                color: #94a3b8;
+                font-size: 1.5em;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .astro-showcase {
+                margin: 60px 0;
+                perspective: 1000px;
+            }
+
+            .astro-preview {
+                background: #1e293b;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                transform: rotateX(5deg);
+                transition: all 0.3s ease;
+            }
+
+            .astro-preview:hover {
+                transform: rotateX(0deg) translateY(-10px);
+            }
+
+            .astro-toolbar {
+                background: #334155;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .astro-controls {
+                display: flex;
+                gap: 8px;
+            }
+
+            .astro-button {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #ef4444;
+            }
+
+            .astro-button:nth-child(2) {
+                background: #f59e0b;
+            }
+
+            .astro-button:nth-child(3) {
+                background: #10b981;
+            }
+
+            .astro-tabs {
+                display: flex;
+                gap: 10px;
+            }
+
+            .astro-tab {
+                padding: 8px 16px;
+                background: #475569;
+                color: #94a3b8;
+                border-radius: 8px;
+                font-size: 0.9em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .astro-tab.active {
+                background: #6366f1;
+                color: white;
+            }
+
+            .astro-tab::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #6366f1;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .astro-tab.active::after {
+                transform: scaleX(1);
+            }
+
+            .astro-code {
+                padding: 20px;
+                font-family: 'Fira Code', monospace;
+                position: relative;
+            }
+
+            .code-block {
+                display: none;
+                animation: fadeIn 0.3s ease;
+            }
+
+            .code-block.active {
+                display: block;
+            }
+
+            .code-line {
+                display: flex;
+                gap: 20px;
+                color: #94a3b8;
+                font-size: 1.1em;
+                line-height: 1.6;
+                transition: all 0.3s ease;
+            }
+
+            .code-line:hover {
+                background: rgba(99, 102, 241, 0.1);
+            }
+
+            .line-number {
+                color: #475569;
+                user-select: none;
+                min-width: 30px;
+                text-align: right;
+            }
+
+            /* JavaScript Syntax Highlighting */
+            .javascript .keyword { color: #ff79c6; }
+            .javascript .variable { color: #bd93f9; }
+            .javascript .property { color: #8be9fd; }
+            .javascript .string { color: #f1fa8c; }
+
+            /* Python Syntax Highlighting */
+            .python .keyword { color: #ff79c6; }
+            .python .class { color: #8be9fd; }
+            .python .function { color: #50fa7b; }
+            .python .variable { color: #bd93f9; }
+            .python .property { color: #8be9fd; }
+            .python .string { color: #f1fa8c; }
+
+            /* HTML Syntax Highlighting */
+            .html .tag { color: #ff79c6; }
+            .html .attribute { color: #8be9fd; }
+            .html .string { color: #f1fa8c; }
+            .html .comment { color: #6272a4; }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .astro-features {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                margin: 60px 0;
+            }
+
+            .feature-card {
+                background: rgba(99, 102, 241, 0.1);
+                padding: 40px;
+                border-radius: 20px;
+                text-align: center;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(99, 102, 241, 0.2);
+            }
+
+            .feature-card:hover {
+                transform: translateY(-10px);
+                background: rgba(99, 102, 241, 0.15);
+                border-color: rgba(99, 102, 241, 0.4);
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                transform: rotate(-10deg);
+            }
+
+            .feature-icon i {
+                font-size: 1.8em;
+                color: white;
+            }
+
+            .feature-card h3 {
+                color: #e2e8f0;
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .feature-card p {
+                color: #94a3b8;
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+
+            .astro-cta {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 60px;
+                padding: 20px;
+            }
+
+            .cta-button {
+                padding: 15px 40px;
+                font-size: 1.2em;
+                border-radius: 12px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                min-width: 200px;
+                justify-content: center;
+            }
+
+            .cta-button.primary {
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                color: white;
+                box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            }
+
+            .cta-button.secondary {
+                background: transparent;
+                color: #6366f1;
+                border: 2px solid #6366f1;
+            }
+
+            .cta-button:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .cta-button i {
+                transition: transform 0.3s ease;
+            }
+
+            .cta-button:hover i {
+                transform: translateX(5px);
+            }
+
+            .cta-button span {
+                white-space: nowrap;
+            }
+
+            @media (max-width: 768px) {
+                .astro-cta {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .cta-button {
+                    width: 100%;
+                    max-width: 300px;
+                }
             }
             
-            .editor-text {
-                font-size: 1.4em;
+            .notes-app .notes-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
             }
-        }
-    </style>
+        </style>
+    </div>
 
     <dialog id="emma-dialog">
         <h2>Lo sentimos</h2>
         <p>Emma no está disponible por el momento, por favor vuelva más tarde.</p>
         <button id="close-dialog">Cerrar</button>
     </dialog>
+
+    <!-- Sección App de Estudios -->
+    <div class="app-section study-app">
+        <div class="app-container">
+            <div class="app-header">
+                <div class="app-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2 class="app-title">App de Estudios</h2>
+                <p class="app-subtitle">Tu compañero de estudio inteligente</p>
+            </div>
+
+            <div class="app-showcase">
+                
+                    <div class="app-features">
+                        <div class="feature-item">
+                            <i class="fas fa-book"></i>
+                            <h3>Organización Inteligente</h3>
+                            <p>Organiza tus materias y tareas de forma eficiente</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Seguimiento de Progreso</h3>
+                            <p>Visualiza tu avance con gráficos interactivos</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-brain"></i>
+                            <h3>Modo Enfoque</h3>
+                            <p>Concentra tu atención con el modo sin distracciones</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="app-cta">
+                <button class="cta-button primary">
+                    <span>Descargar App</span>
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Bloc de Notas -->
+    <div class="notes-app">
+        
+    </div>
+
+    <!-- Sección Reproductor de Música -->
+    <div class="app-section music-player">
+        <div class="app-container">
+            <div class="app-header">
+                <div class="app-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h2 class="app-title">Reproductor de Música</h2>
+                <p class="app-subtitle">Tu música, tu ritmo, tu estilo</p>
+            </div>
+
+            <div class="app-showcase">
+                
+                    <div class="player-interface">
+                        <div class="now-playing">
+                            <div class="album-art">
+                                <i class="fas fa-compact-disc"></i>
+                            </div>
+                            <div class="track-info">
+                                <h3>Canción Actual</h3>
+                                <p>Artista - Álbum</p>
+                            </div>
+                        </div>
+                        <div class="player-controls">
+                            <button class="control-btn"><i class="fas fa-step-backward"></i></button>
+                            <button class="control-btn play-btn"><i class="fas fa-play"></i></button>
+                            <button class="control-btn"><i class="fas fa-step-forward"></i></button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="app-features">
+                <div class="feature-item">
+                    <i class="fas fa-list"></i>
+                    <h3>Playlists Personalizadas</h3>
+                    <p>Crea y organiza tus listas de reproducción</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>Ecualizador Avanzado</h3>
+                    <p>Ajusta el sonido a tu gusto</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3>Modo Radio</h3>
+                    <p>Descubre nueva música automáticamente</p>
+                </div>
+            </div>
+
+            <div class="app-cta">
+                <button class="cta-button primary">
+                    <span>Reproducir Ahora</span>
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
