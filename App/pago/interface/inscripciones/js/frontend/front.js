@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const mp = new MercadoPago('TEST-3b08c9fc-149f-433a-a8cf-c28358110264', { locale: 'es-AR' });
+    const mp = new MercadoPago('TEST-3b08c9fc-149f-433a-a8cf-c28358110264', { locale: 'es-MX' });
     try {
         // Hacer solicitud al backend para obtener el ID de la preferencia
         const response = await fetch('http://localhost:3000/create_preference', { method: 'POST' });
