@@ -9,6 +9,16 @@
 //   correctamente en el backend.           //
 //                                          //
 
+
+//---------------------------------------------------------//
+//                                                        //
+//   @copyright 2025 Jeshua Garza Romero                 //
+//                                                      //
+//                                                     //
+//----------------------------------------------------//
+
+
+
 import { http, fs, path, fileURLToPath, fetch } from '../../../../../importaaciones/imports.js';
 import config from '../../../../Api/env.js';
 
