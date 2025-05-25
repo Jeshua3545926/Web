@@ -36,7 +36,7 @@ class PaymentServer {
                 }],
                 payer: {
                     name: "Test",
-
+                    //email: config.vendedor_email,
                 },             
 
             })
