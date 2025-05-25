@@ -37,7 +37,6 @@ class PaymentServer {
                 payer: {
                     name: "Test",
                     surname: "User",
-                    email: "test_user_123@testuser.com"
                 },             
 
             })
