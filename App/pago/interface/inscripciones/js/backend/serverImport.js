@@ -34,12 +34,11 @@ class PaymentServer {
                     currency_id: 'MXN',
                     unit_price: 2500
                 }],
-                // back_urls: {
-                //     success: 'http://localhost:3000/success',
-                //     failure: 'http://localhost:3000/failure',
-                //     pending: 'http://localhost:3000/pending'
-                // },
-                // auto_return: 'approved',
+                payer: {
+                    name: "Test",
+                    surname: "User",
+                },             
+
             })
         });
         return await response.json();
