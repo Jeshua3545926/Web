@@ -37,6 +37,7 @@ class PaymentServer {
                 payer: {
                     name: "Test",
                     surname: "User",
+                    
                 },             
 
             })
