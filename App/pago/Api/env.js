@@ -5,4 +5,4 @@ const config = {
     comprador_email: 'test_user_881378334@testuser.com'
 };
 
-module.exports = config;
+export default config;
