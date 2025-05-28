@@ -1,9 +1,19 @@
 
+
 document.addEventListener("DOMContentLoaded", async function () {
+    if(typeof MercadoPago == 'undefined'){
+        console.log('El SDK de MercadoPago no se ha cargado correctamente.');
+        return;
+    }
     const mp = new MercadoPago('TEST-3b08c9fc-149f-433a-a8cf-c28358110264', { locale: 'es-MX' });
     try {
         // Hacer solicitud al backend para obtener el ID de la preferencia
-        const response = await fetch('http://localhost:3000/create_preference', { method: 'POST' });
+        const response = await fetch('http://192.168.100.7:4000/create_preference', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
         if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.status}`);
         }

@@ -9,7 +9,8 @@
 //   correctamente en el backend.           //
 //                                          //
 
-import { http, fs, path, fileURLToPath, fetch } from '../../../../../importaaciones/imports.js';
+import { http, fs, path, fileURLToPath } from '../../../../../importaaciones/imports.js';
+import fetch from 'node-fetch';
 import config from '../../../../Api/env.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,7 +22,7 @@ class PaymentServer {
     }
 
     async createPreference() {
-        const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
+        const response = await global.fetch('https://api.mercadopago.com/checkout/preferences', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${this.ACCESS_TOKEN}`,
@@ -34,10 +35,7 @@ class PaymentServer {
                     currency_id: 'MXN',
                     unit_price: 2500
                 }],
-                payer: {
-                    name: "Test",
-                    surname: "User",
-                },             
+            
 
             })
         });
@@ -45,6 +43,10 @@ class PaymentServer {
     }
 
     async handlePostRequest(req, res) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    
         let body = '';
         req.on('data', chunk => { body += chunk.toString(); });
         req.on('end', async () => {
@@ -89,6 +91,9 @@ class PaymentServer {
 
     createServer() {
         return http.createServer((req, res) => {
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
             if (req.method === 'POST' && req.url === '/create_preference') {
                 this.handlePostRequest(req, res);
             } else if (req.url.endsWith('.js')) {
@@ -145,7 +150,7 @@ class PaymentServer {
         // \x1b[37m - Color blanco
         // \x1b[0m  - Resetear color a predeterminado
             
-        server.listen(port);
+        server.listen(port,'0.0.0.0');
         return server;
     }
 }
